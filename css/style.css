@@ -1,0 +1,265 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --bg-color: #381357;
+    --secondary-bg-color: #0D0D0D;
+    --primary-color: #ffffff;
+    --secondary-color: #57e779;
+    --text-color: #5C57F2;
+    --border-color: #48358C;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(186deg, #0a6279ca, #0b568171, #421e90e1), url('../img/bg-img-petshop2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#checkout-page {
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+#fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#face .spinner-border {
+    width: 60px;
+    height: 60px;
+}
+
+.hide {
+    display: none !important;
+}
+
+#message {
+    width: 24%;
+}
+
+.alert.alert-light {
+    background: linear-gradient(45deg, #10ad9680, #0fdcbdab, #7470f7b2);
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+    border: 1px solid #10ad9680;
+    box-shadow: inset 0 0 15px #0698a8;
+    border-radius: 20px;
+}
+
+.alert.alert-light p {
+    padding: 1em 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+button#close-message {
+    background-color: #010806;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 0 10px #b2b2b245;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+button#close-message:hover {
+    background-color: #12da9e;
+}
+
+#order-form-container {
+    padding: 1.5em;
+    max-width: 768px;
+}
+
+#steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.step i {
+    background-color: var(--secondary-bg-color);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ffffffdb;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    transition: 0.3s;
+    box-shadow: inset 0 0 5px #0000006b;
+}
+
+.step i:hover {
+    transform: scale(0.9);
+    box-shadow: inset 0 0 5px #00000088;
+}
+
+.step .active {
+    background-color: #20edb0;
+    color: var(--bg-color);
+}
+
+.step p {
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.line {
+    border-bottom: 2px solid var(--primary-color);
+    position: absolute;
+    top: 22.5px;
+    width: 90%;
+    left: 5%;
+    z-index: -1;
+}
+
+#form-header h2 {
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.1em;
+    padding: 0.5em;
+
+}
+
+#form-header p {
+    color: #e7e7e7cc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 1em;
+}
+
+#order-form-container input,
+#order-form-container select {
+    background-color: #38135745;
+    border: 1px solid #c8c6c675;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+}
+
+#order-form-container select {
+    padding: 1rem .75rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#order-form-container label {
+    color: #ffffff7a;
+    left: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+#order-form-container input:disabled,
+#order-form-container select:disabled {
+    background-color: #200b3277;
+    color: #ffffff7a;
+    border: 1px solid #c8c6c675;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#order-form-container input:focus {
+    border-color: #63ffd0;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn.btn-primary {
+    background-color: #02d394;
+    color: #f1f1f1;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    box-shadow: inset 0 0 5px #3cb00f;
+    padding: 0.5em 1.2em;
+    margin-bottom: 2em;
+    transition: all 0.2s ease;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.btn.btn-primary:hover {
+    background-color: #0fe1a2;
+    color: #ffffff;
+    transform: scale(1.1);
+    opacity: 2;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(186deg, #0a6279ca, #0b568171, #421e90e1), url('../img/bg-img-petshop2.jpg');
+        background-position: right;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #message {
+        width: 60%;
+    }
+
+    #fade h4 {
+        font-size: 1.2em;
+    }
+
+    #fade p {
+        font-size: 0.9em;
+    }
+
+    .alert.alert-light p {
+        padding: 0.5em 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    button#close-message {
+        background-color: #010806;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 24px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        box-shadow: 0 0 10px #b2b2b245;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    
+    button#close-message:hover {
+        background-color: #12da9e;
+    }
+
+    #order-form-container {
+        width: 100%;
+        padding: 1.2rem;
+    }
+
+}
