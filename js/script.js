@@ -8,7 +8,7 @@ const formInputs = document.querySelectorAll("[data-input]");
 
 const closeButton = document.querySelector("#close-message");
 
-// Validate CEP Input
+
 cepInput.addEventListener("keypress", (e) => {
   const onlyNumbers = /[0-9]|\./;
   const key = String.fromCharCode(e.keyCode);
@@ -17,24 +17,24 @@ cepInput.addEventListener("keypress", (e) => {
 
   console.log(onlyNumbers.test(key));
 
-  // allow only numbers
+
   if (!onlyNumbers.test(key)) {
     e.preventDefault();
     return;
   }
 });
 
-// Evento to get address
+
 cepInput.addEventListener("keyup", (e) => {
   const inputValue = e.target.value;
 
-  //   Check if we have a CEP
+  
   if (inputValue.length === 8) {
     getAddress(inputValue);
   }
 });
 
-// Get address from API
+
 const getAddress = async (cep) => {
   toggleLoader();
 
@@ -50,7 +50,7 @@ const getAddress = async (cep) => {
   console.log(formInputs);
   console.log(data.erro);
 
-  // Show error and reset form
+ 
   if (data.erro === "true") {
     if (!addressInput.hasAttribute("disabled")) {
       toggleDisabled();
@@ -62,7 +62,7 @@ const getAddress = async (cep) => {
     return;
   }
 
-  // Activate disabled attribute if form is empty
+  
   if (addressInput.value === "") {
     toggleDisabled();
   }
@@ -75,7 +75,7 @@ const getAddress = async (cep) => {
   toggleLoader();
 };
 
-// Add or remove disable attribute
+
 const toggleDisabled = () => {
   if (regionInput.hasAttribute("disabled")) {
     formInputs.forEach((input) => {
@@ -88,7 +88,7 @@ const toggleDisabled = () => {
   }
 };
 
-// Show or hide loader
+
 const toggleLoader = () => {
   const fadeElement = document.querySelector("#fade");
   const loaderElement = document.querySelector("#loader");
@@ -97,7 +97,7 @@ const toggleLoader = () => {
   loaderElement.classList.toggle("hide");
 };
 
-// Show or hide message
+
 const toggleMessage = (msg) => {
   const fadeElement = document.querySelector("#fade");
   const messageElement = document.querySelector("#message");
@@ -110,10 +110,10 @@ const toggleMessage = (msg) => {
   messageElement.classList.toggle("hide");
 };
 
-// Close message modal
+
 closeButton.addEventListener("click", () => toggleMessage());
 
-// Save address
+
 addressForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
